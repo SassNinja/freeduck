@@ -12,6 +12,6 @@ namespace Ch.Cyberduck.Ui.Controller
 {
     public class DesktopNotificationService : AbstractDesktopNotificationService
     {
-        protected override string AumID => "iterate.Cyberduck";
+        protected override string AumID => "Freeduck.Freeduck";
     }
 }

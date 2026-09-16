@@ -1020,9 +1020,12 @@ public class MainController extends BundleController implements NSApplication.De
         });
         // Import thirdparty bookmarks.
         this.background(new ImporterBackgroundAction(bookmarks, bookmarksSemaphore));
-        final CrashReporter reporter = CrashReporter.create();
-        log.info("Check for crash report");
-        reporter.checkForCrash(preferences.getProperty("website.crash"));
+        final String crashUrl = preferences.getProperty("website.crash");
+        if(StringUtils.isNotBlank(crashUrl)) {
+            final CrashReporter reporter = CrashReporter.create();
+            log.info("Check for crash report");
+            reporter.checkForCrash(crashUrl);
+        }
         if(updater.hasUpdatePrivileges()) {
             if(preferences.getBoolean("update.check")) {
                 final long next = preferences.getLong("update.check.timestamp") + preferences.getLong("update.check.interval") * 1000;
@@ -1223,7 +1226,7 @@ public class MainController extends BundleController implements NSApplication.De
             return;
         }
         switch(url) {
-            case "x-cyberduck-action:update":
+            case "x-freeduck-action:update":
                 updater.check(false);
                 break;
             default:

@@ -19,7 +19,7 @@
 
     <import file="../../build.xml"/>
 
-    <property name="app.name" value="duck"/>
+    <property name="app.name" value="freeduck"/>
     <property name="app.icon" value="${home}/cyberduck-application.png"/>
     <property name="rpm.spec" value="${build.bundles}/package/linux"/>
     <property name="license" value="${home}/LICENSE.txt"/>
@@ -30,7 +30,7 @@
     <target name="build" depends="version">
         <mkdir dir="${build.input}"/>
         <mkdir dir="${build.resources}"/>
-        <mkdir dir="${build.resources}/images/duck"/>
+        <mkdir dir="${build.resources}/images/freeduck"/>
         <copy todir="${build.input}">
             <fileset dir="${build}">
                 <include name="*.jar"/>
@@ -38,13 +38,13 @@
                 <include name="profiles/*.cyberduckprofile"/>
             </fileset>
         </copy>
-        <copy file="${setup}/rpm/duck.spec" tofile="${build.resources}/duck.spec"/>
-        <replace file="${build.resources}/duck.spec" summary="true" encoding="UTF-8">
+        <copy file="${setup}/rpm/duck.spec" tofile="${build.resources}/freeduck.spec"/>
+        <replace file="${build.resources}/freeduck.spec" summary="true" encoding="UTF-8">
             <replacefilter token="${VERSION}" value="${version}"/>
             <replacefilter token="${REVISION}" value="${revision}"/>
             <replacefilter token="${LICENSEFILE}" value="${license}"/>
         </replace>
-        <copy file="${app.icon}" tofile="${build.resources}/duck.png"/>
+        <copy file="${app.icon}" tofile="${build.resources}/freeduck.png"/>
         <copy file="${setup}/deb/duck.postinstall" tofile="${build.resources}/postinst"/>
         <copy file="${setup}/deb/duck.control" tofile="${build.resources}/control"/>
         <copy file="${setup}/deb/duck.prerm" tofile="${build.resources}/prerm"/>

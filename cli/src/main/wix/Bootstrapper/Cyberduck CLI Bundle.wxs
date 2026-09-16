@@ -1,10 +1,10 @@
 ﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal" xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util">
-  <Bundle Name="Cyberduck CLI" Version="$(ProductVersion)" Manufacturer="iterate GmbH" UpgradeCode="46C3FB4E-2B23-4728-8196-BEA25ADE868A" IconSourceFile="$(CyberduckDir)cyberduck-application.ico">
+  <Bundle Name="Freeduck CLI" Version="$(ProductVersion)" Manufacturer="iterate GmbH" UpgradeCode="DB6D3C1B-A820-4448-8C5B-3C2D7A0206F0" IconSourceFile="$(CyberduckDir)cyberduck-application.ico">
     <BootstrapperApplication>
       <bal:WixStandardBootstrapperApplication LicenseUrl="" LogoFile="$(CyberduckDir)cyberduck-application.png" LogoSideFile="$(SetupDir)side.png" ThemeFile="InstallerTheme.xml" Theme="hyperlinkSidebarLicense" />
       <Payload Name="icon.ico" SourceFile="$(CyberduckDir)cyberduck-application.ico" Compressed="yes" />
     </BootstrapperApplication>
-    <Variable Name="InstallFolder" Type="formatted" Value="[ProgramFiles64Folder]Cyberduck CLI" />
+    <Variable Name="InstallFolder" Type="formatted" Value="[ProgramFiles64Folder]Freeduck CLI" />
     <util:RegistrySearch Id="InstallFolderSearch" Root="HKLM" Key="Software\[WixBundleManufacturer]\[WixBundleName]" Value="InstallDir" Variable="InstallFolder" />
 
     <bal:Condition Message="Windows 10 Anniversary Update (14393) or later is required to run this application." Condition="WindowsBuildNumber &gt;= 14393" />

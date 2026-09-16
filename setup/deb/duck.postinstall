@@ -1,1 +1,1 @@
-ln -sf /opt/duck/bin/duck /usr/local/bin/duck
+ln -sf /opt/freeduck/bin/freeduck /usr/local/bin/freeduck

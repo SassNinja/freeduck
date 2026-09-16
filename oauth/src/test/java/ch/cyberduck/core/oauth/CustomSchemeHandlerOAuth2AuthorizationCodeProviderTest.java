@@ -23,7 +23,7 @@ public class CustomSchemeHandlerOAuth2AuthorizationCodeProviderTest {
 
     @Test
     public void toScheme() {
-        assertEquals("x-cyberduck-action", CustomSchemeHandlerOAuth2AuthorizationCodeProvider.toScheme("x-cyberduck-action:oauth"));
+        assertEquals("x-freeduck-action", CustomSchemeHandlerOAuth2AuthorizationCodeProvider.toScheme("x-freeduck-action:oauth"));
         assertEquals("https", CustomSchemeHandlerOAuth2AuthorizationCodeProvider.toScheme("https://redirect/"));
     }
 }

@@ -23,7 +23,7 @@
 
     <import file="../build.xml"/>
 
-    <property name="app.name" value="Cyberduck"/>
+    <property name="app.name" value="Freeduck"/>
     <property name="app.bundle" value="${build}/${app.name}.app"/>
 
     <property name="spotlight" value="${module}/spotlight"/>
@@ -41,13 +41,8 @@
     <property name="build.xcodeoptions.default"
               value="CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO JVM_RUNTIME_ARGS='${jvm.runtime.debug}${jvm.runtime.args}' JAVA_HOME=${java.home} SYMROOT=${build} SDKROOT=macosx ARCHS=${app.runtime.archs} MACOSX_DEPLOYMENT_TARGET=${app.runtime.system.min}"/>
 
-    <condition property="build.xcodeoptions"
-               value="${build.xcodeoptions.default} SPARKLEFEED='https://version.cyberduck.io/${env.SPARKLE_FEED}/changelog.rss' INFOPLIST_PREPROCESSOR_DEFINITIONS=SPARKLE_BUILD"
-               else="${build.xcodeoptions.default}">
-        <not>
-            <equals arg1="${env.SPARKLE_FEED}" arg2=""/>
-        </not>
-    </condition>
+    <property name="build.xcodeoptions"
+              value="${build.xcodeoptions.default}"/>
 
     <condition property="xcode.configuration"
                value="${env.XCODE_CONFIGURATION}"
@@ -163,8 +158,8 @@
             <include name="changelog.rss"/>
             <replacefilter token="${TIMESTAMP}" value="${touch.time}"/>
             <replacefilter token="${ARCHIVE}"
-                           value="https://update.cyberduck.io/${env.SPARKLE_FEED}/${bundle.archive.zip}"/>
-            <replacefilter token="${CHANGELOG}" value="https://version.cyberduck.io/${env.SPARKLE_FEED}/changelog.html"/>
+                           value=""/>
+            <replacefilter token="${CHANGELOG}" value=""/>
             <replacefilter token="${REVISION}" value="${revision}"/>
             <replacefilter token="${HASH}" value="${hash}"/>
             <replacefilter token="${VERSION}" value="${version}"/>

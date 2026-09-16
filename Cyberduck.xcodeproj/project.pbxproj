@@ -517,7 +517,7 @@
 		47181E9D0E17D1E500568D80 /* el */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; lineEnding = 0; name = el; path = i18n/src/main/resources/el.lproj/Status.strings; sourceTree = "<group>"; };
 		47181E9E0E17D1E500568D80 /* el */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; lineEnding = 0; name = el; path = i18n/src/main/resources/el.lproj/Configuration.strings; sourceTree = "<group>"; };
 		47181E9F0E17D1E500568D80 /* el */ = {isa = PBXFileReference; lastKnownFileType = text; name = el; path = i18n/src/main/resources/el.lproj/License.txt; sourceTree = "<group>"; };
-		471D2C5505A2505600675163 /* Cyberduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyberduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		471D2C5505A2505600675163 /* Freeduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freeduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		471DF14F167F2A7B00EAFE71 /* cyberduck-document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "cyberduck-document.icns"; sourceTree = "<group>"; };
 		471F5C0D12AD1B6B0005D323 /* pt_PT */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; lineEnding = 0; name = pt_PT; path = i18n/src/main/resources/pt_PT.lproj/Alert.strings; sourceTree = "<group>"; };
 		471F5C0E12AD1B6B0005D323 /* ja */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; lineEnding = 0; name = ja; path = i18n/src/main/resources/ja.lproj/Alert.strings; sourceTree = "<group>"; };
@@ -1399,7 +1399,7 @@
 		47B607480DA420880068282C /* es */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; lineEnding = 0; name = es; path = i18n/src/main/resources/es.lproj/Keychain.strings; sourceTree = "<group>"; };
 		47B607490DA420880068282C /* da */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; lineEnding = 0; name = da; path = i18n/src/main/resources/da.lproj/Keychain.strings; sourceTree = "<group>"; };
 		47BCF18D13BB4EC700D26E4C /* setup/app/container-migration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "setup/app/container-migration.plist"; sourceTree = "<group>"; };
-		47C2AD801A268C880047B67A /* duck.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = duck.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		47C2AD801A268C880047B67A /* freeduck.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = freeduck.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C35B0A26247FE4002AABBD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = i18n/src/main/resources/en.lproj/Profiles.xib; sourceTree = "<group>"; };
 		47C35B112627690E002AABBD /* Profile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Profile.xib; path = osx/src/main/resources/Profile.xib; sourceTree = "<group>"; };
 		47C4D6CB08798D0C007A1D39 /* cs */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xib; name = cs; path = i18n/src/main/resources/cs.lproj/Command.xib; sourceTree = "<group>"; };
@@ -1842,9 +1842,9 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				471D2C5505A2505600675163 /* Cyberduck.app */,
+				471D2C5505A2505600675163 /* Freeduck.app */,
 				4739EF730856981400405FD3 /* libcore.dylib */,
-				47C2AD801A268C880047B67A /* duck.bundle */,
+				47C2AD801A268C880047B67A /* freeduck.bundle */,
 				47D9E2832DF9B98C0088B042 /* Cyberduck Dock Plugin.docktileplugin */,
 			);
 			name = Products;
@@ -2208,7 +2208,7 @@
 			name = app;
 			productInstallPath = "$(USER_APPS_DIR)";
 			productName = Cyberduck;
-			productReference = 471D2C5505A2505600675163 /* Cyberduck.app */;
+			productReference = 471D2C5505A2505600675163 /* Freeduck.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4739EF670856981300405FD3 /* libcore */ = {
@@ -2246,7 +2246,7 @@
 			);
 			name = cli;
 			productName = cli;
-			productReference = 47C2AD801A268C880047B67A /* duck.bundle */;
+			productReference = 47C2AD801A268C880047B67A /* freeduck.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		47D9E2822DF9B98C0088B042 /* docktile */ = {
@@ -4242,9 +4242,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				PRODUCT_BUNDLE_IDENTIFIER = sh.duck;
+				PRODUCT_BUNDLE_IDENTIFIER = io.freeduck.cli;
 				PRODUCT_MODULE_NAME = duck;
-				PRODUCT_NAME = duck;
+				PRODUCT_NAME = freeduck;
 				SKIP_INSTALL = YES;
 				SYMROOT = cli/target;
 				WRAPPER_EXTENSION = bundle;
@@ -4273,8 +4273,8 @@
 					"-framework",
 					Sparkle,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.sudo.cyberduck;
-				PRODUCT_NAME = Cyberduck;
+				PRODUCT_BUNDLE_IDENTIFIER = io.freeduck;
+				PRODUCT_NAME = Freeduck;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -4370,7 +4370,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.sudo.cyberduck.docktile;
+				PRODUCT_BUNDLE_IDENTIFIER = io.freeduck.docktile;
 				PRODUCT_NAME = "Cyberduck Dock Plugin";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
@@ -4415,7 +4415,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.sudo.cyberduck.docktile;
+				PRODUCT_BUNDLE_IDENTIFIER = io.freeduck.docktile;
 				PRODUCT_NAME = "Cyberduck Dock Plugin";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
@@ -4498,8 +4498,8 @@
 					"@loader_path/../Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.sudo.cyberduck;
-				PRODUCT_NAME = Cyberduck;
+				PRODUCT_BUNDLE_IDENTIFIER = io.freeduck;
+				PRODUCT_NAME = Freeduck;
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Mac App Store";
@@ -4542,9 +4542,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				PRODUCT_BUNDLE_IDENTIFIER = sh.duck;
+				PRODUCT_BUNDLE_IDENTIFIER = io.freeduck.cli;
 				PRODUCT_MODULE_NAME = duck;
-				PRODUCT_NAME = duck;
+				PRODUCT_NAME = freeduck;
 				SKIP_INSTALL = YES;
 				SYMROOT = cli/target;
 				WRAPPER_EXTENSION = bundle;

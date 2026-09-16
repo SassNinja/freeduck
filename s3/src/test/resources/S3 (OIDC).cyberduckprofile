@@ -42,7 +42,7 @@
         <key>OAuth Client Secret</key>
         <string>password</string>
         <key>OAuth Redirect Url</key>
-        <string>x-cyberduck-action:oauth</string>
+        <string>x-freeduck-action:oauth</string>
         <key>STS Endpoint</key>
         <string>http://localhost:9000</string>
         <key>Scopes</key>

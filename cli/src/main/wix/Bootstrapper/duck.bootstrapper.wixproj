@@ -1,6 +1,6 @@
 ﻿<Project Sdk="WixToolset.Sdk">
   <PropertyGroup>
-    <OutputName>duck-$(FileVersion)</OutputName>
+    <OutputName>freeduck-$(FileVersion)</OutputName>
     <OutputType>Bundle</OutputType>
     <DefineConstants>CyberduckDir=$(CyberduckDir);SetupDir=$(SetupDir);ProductVersion=$(FileVersion);$(DefineConstants)</DefineConstants>
   </PropertyGroup>

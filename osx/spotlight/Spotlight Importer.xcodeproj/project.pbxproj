@@ -228,7 +228,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = ch.sudo.cyberduck.spotlight.importer;
+				PRODUCT_BUNDLE_IDENTIFIER = io.freeduck.spotlight;
 				PRODUCT_NAME = "Cyberduck Spotlight Importer";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (

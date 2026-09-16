@@ -1,6 +1,6 @@
 ﻿<Project Sdk="WixToolset.Sdk">
   <PropertyGroup>
-    <OutputName>Cyberduck-Installer-$(FileVersion)</OutputName>
+    <OutputName>Freeduck-Installer-$(FileVersion)</OutputName>
     <Platforms>x64</Platforms>
     <DefineConstants>
       ProductVersion=$(FileVersion);

@@ -40,7 +40,7 @@
         <key>OAuth Client Secret</key>
         <string/>
         <key>OAuth Redirect Url</key>
-        <string>io.cyberduck:oauth</string>
+        <string>io.freeduck:oauth</string>
         <key>Password Configurable</key>
         <false/>
         <key>Regions</key>

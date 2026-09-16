@@ -100,7 +100,7 @@ namespace Ch.Cyberduck.Cli
         {
             public IPropertyStore New()
             {
-                EnvironmentInfo.DataFolderName = "Cyberduck";
+                EnvironmentInfo.DataFolderName = "Freeduck";
                 return new ApplicationSettingsPropertyStore();
             }
         }

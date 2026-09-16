@@ -19,7 +19,7 @@
               Version="${normalized.version}.0" />
 
     <Properties>
-        <DisplayName>Cyberduck</DisplayName>
+        <DisplayName>Freeduck</DisplayName>
         <PublisherDisplayName>iterate</PublisherDisplayName>
         <Logo>Images\CyberduckAppx.50x50.png</Logo>
 
@@ -28,8 +28,8 @@
 
         <virtualization:FileSystemWriteVirtualization>
             <virtualization:ExcludedDirectories>
-                <virtualization:ExcludedDirectory>$(KnownFolder:LocalAppData)\Cyberduck</virtualization:ExcludedDirectory>
-                <virtualization:ExcludedDirectory>$(KnownFolder:RoamingAppData)\Cyberduck</virtualization:ExcludedDirectory>
+                <virtualization:ExcludedDirectory>$(KnownFolder:LocalAppData)\Freeduck</virtualization:ExcludedDirectory>
+                <virtualization:ExcludedDirectory>$(KnownFolder:RoamingAppData)\Freeduck</virtualization:ExcludedDirectory>
                 <virtualization:ExcludedDirectory>$(KnownFolder:RoamingAppData)\iterate_GmbH</virtualization:ExcludedDirectory>
             </virtualization:ExcludedDirectories>
         </virtualization:FileSystemWriteVirtualization>
@@ -44,18 +44,18 @@
     </Resources>
 
     <Applications>
-        <Application Id="Cyberduck"
+        <Application Id="Freeduck"
           Executable="$targetnametoken$.exe"
           EntryPoint="$targetentrypoint$">
-            <uap:VisualElements DisplayName="Cyberduck"
+            <uap:VisualElements DisplayName="Freeduck"
               Description="Cyberduck is a libre FTP, SFTP, WebDAV, S3, Backblaze B2, Azure &amp; OpenStack Swift browser for Mac and Windows."
               BackgroundColor="transparent" Square150x150Logo="Images\CyberduckAppx.150x150.png"
               Square44x44Logo="Images\CyberduckAppx.44x44.png" />
             <Extensions>
                 <rescap3:Extension Category="windows.desktopAppMigration">
                     <rescap3:DesktopAppMigration>
-                        <rescap3:DesktopApp AumId="iterate.Cyberduck" />
-                        <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\Cyberduck\Cyberduck.lnk" />
+                        <rescap3:DesktopApp AumId="Freeduck.Freeduck" />
+                        <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\Freeduck\Freeduck.lnk" />
                     </rescap3:DesktopAppMigration>
                 </rescap3:Extension>
                 <uap:Extension Category="windows.fileTypeAssociation">
@@ -103,19 +103,19 @@
                     </uap:Protocol>
                 </uap:Extension>
                 <uap:Extension Category="windows.protocol">
-                    <uap:Protocol Name="io.cyberduck">
-                        <uap:DisplayName>Cyberduck OAuth</uap:DisplayName>
+                    <uap:Protocol Name="io.freeduck">
+                        <uap:DisplayName>Freeduck OAuth</uap:DisplayName>
                     </uap:Protocol>
                 </uap:Extension>
                 <uap:Extension Category="windows.protocol">
-                    <uap:Protocol Name="x-cyberduck-action">
-                        <uap:DisplayName>Cyberduck OAuth</uap:DisplayName>
+                    <uap:Protocol Name="x-freeduck-action">
+                        <uap:DisplayName>Freeduck OAuth</uap:DisplayName>
                     </uap:Protocol>
                 </uap:Extension>
-                <uap5:Extension Category="windows.appExecutionAlias" Executable="Cyberduck.exe"
+                <uap5:Extension Category="windows.appExecutionAlias" Executable="Freeduck.exe"
                   EntryPoint="Windows.FullTrustApplication">
                     <uap5:AppExecutionAlias>
-                        <uap5:ExecutionAlias Alias="Cyberduck.exe" />
+                        <uap5:ExecutionAlias Alias="Freeduck.exe" />
                     </uap5:AppExecutionAlias>
                 </uap5:Extension>
             </Extensions>

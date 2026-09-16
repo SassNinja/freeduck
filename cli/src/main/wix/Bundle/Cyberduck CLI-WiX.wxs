@@ -1,8 +1,8 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Package Name="Cyberduck CLI"
+  <Package Name="Freeduck CLI"
            Manufacturer="iterate GmbH"
            Version="$(ProductVersion)"
-           UpgradeCode="98B2B672-3720-4CAC-BF3E-220757500AE0">
+           UpgradeCode="6FFD3A72-AB8F-42B1-AEEA-1B3D7D6AC5FE">
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="true" />
 
@@ -14,7 +14,7 @@
         </Files>
 
         <Component Id="SetEnvironment"
-                   Guid="B429556B-9604-45DD-896C-4AE7BFFBE9EB">
+                   Guid="B50970EA-451D-4D11-A5B0-37D407709901">
           <Environment Id="PathVar"
                        Action="set"
                        Part="last"

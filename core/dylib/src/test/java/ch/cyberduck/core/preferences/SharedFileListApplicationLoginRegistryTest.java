@@ -20,7 +20,7 @@ public class SharedFileListApplicationLoginRegistryTest {
     @Ignore
     public void testRegister() {
         final SharedFileListApplicationLoginRegistry registry = new SharedFileListApplicationLoginRegistry(new LaunchServicesApplicationFinder());
-        final Application application = new Application("ch.sudo.cyberduck");
+        final Application application = new Application("io.freeduck");
         assertTrue(registry.register(application));
         assertTrue(new FinderSidebarService(SidebarService.List.login).contains(new FinderLocal(NSWorkspace.sharedWorkspace().absolutePathForAppBundleWithIdentifier(application.getIdentifier()))));
         assertTrue(registry.unregister(application));
@@ -29,6 +29,6 @@ public class SharedFileListApplicationLoginRegistryTest {
     @Test
     public void testRegisterNotInstalled() {
         final SharedFileListApplicationLoginRegistry registry = new SharedFileListApplicationLoginRegistry(new DisabledApplicationFinder());
-        assertFalse(registry.register(new Application("ch.sudo.cyberduck")));
+        assertFalse(registry.register(new Application("io.freeduck")));
     }
 }

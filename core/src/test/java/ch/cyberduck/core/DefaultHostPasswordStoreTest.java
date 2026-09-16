@@ -36,7 +36,7 @@ public class DefaultHostPasswordStoreTest {
 
             @Override
             public String getOAuthRedirectUrl() {
-                return "x-cyberduck-action:oauth";
+                return "x-freeduck-action:oauth";
             }
         })).toArray(new String[0]);
         assertEquals("clientid", prefix[0]);
@@ -58,7 +58,7 @@ public class DefaultHostPasswordStoreTest {
 
             @Override
             public String getOAuthRedirectUrl() {
-                return "x-cyberduck-action:oauth";
+                return "x-freeduck-action:oauth";
             }
         }).setCredentials(new Credentials("user"))).toArray(new String[0]);
         assertEquals("clientid (user)", prefix[0]);

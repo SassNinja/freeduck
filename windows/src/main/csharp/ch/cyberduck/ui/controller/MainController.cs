@@ -35,7 +35,6 @@ using ch.cyberduck.core.transfer;
 using ch.cyberduck.core.updater;
 using ch.cyberduck.core.urlhandler;
 using Ch.Cyberduck.Core;
-using Ch.Cyberduck.Core.Sparkle;
 using Ch.Cyberduck.Core.TaskDialog;
 using Ch.Cyberduck.Core.Ui.Preferences;
 using Ch.Cyberduck.Ui.Core.Contracts;
@@ -94,9 +93,7 @@ namespace Ch.Cyberduck.Ui.Controller
         /// <see cref="http://msdn.microsoft.com/en-us/library/system.stathreadattribute.aspx"/>
         private BrowserController _bc;
 
-        private WinSparkle.win_sparkle_can_shutdown_callback_t _canShutdownCallback;
         private ProfilesUpdater _profiles;
-        private WinSparkle.win_sparkle_shutdown_request_callback_t _shutdownRequestCallback;
         private PeriodicUpdateChecker _updater;
         private ServiceHost serviceHost;
 
@@ -684,11 +681,6 @@ namespace Ch.Cyberduck.Ui.Controller
             return controller;
         }
 
-        private int CanShutdownCallback()
-        {
-            return Convert.ToInt32(PrepareExit());
-        }
-
         private IList<ThirdpartyBookmarkCollection> GetThirdpartyBookmarks()
         {
             return new List<ThirdpartyBookmarkCollection>
@@ -851,11 +843,6 @@ namespace Ch.Cyberduck.Ui.Controller
 
         private void InitializeUpdater()
         {
-            // register callbacks
-            _canShutdownCallback = CanShutdownCallback;
-            _shutdownRequestCallback = ShutdownRequestCallback;
-            WinSparklePeriodicUpdateChecker.SetCanShutdownCallback(_canShutdownCallback);
-            WinSparklePeriodicUpdateChecker.SetShutdownRequestCallback(_shutdownRequestCallback);
             if (PreferencesFactory.get().getBoolean("update.check"))
             {
                 _updater = PeriodicUpdateCheckerFactory.get();
@@ -957,7 +944,7 @@ namespace Ch.Cyberduck.Ui.Controller
         private void SetupServiceHost()
         {
             serviceHost = new ServiceHost(this);
-            serviceHost.AddServiceEndpoint(typeof(ICyberduck), new NetNamedPipeBinding(), new Uri("net.pipe://localhost/iterate/cyberduck.io"));
+            serviceHost.AddServiceEndpoint(typeof(ICyberduck), new NetNamedPipeBinding(), new Uri("net.pipe://localhost/freeduck.io"));
             serviceHost.Description.Behaviors.Add(new ServiceMetadataBehavior());
             serviceHost.Open();
         }
@@ -986,12 +973,6 @@ namespace Ch.Cyberduck.Ui.Controller
             {
                 _profiles.unregister();
             }
-        }
-
-        private void ShutdownRequestCallback()
-        {
-            Logger.info("About to exit in order to install update");
-            Exit(true);
         }
     }
 }

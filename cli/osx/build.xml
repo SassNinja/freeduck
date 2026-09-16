@@ -17,9 +17,9 @@
 
     <import file="../../build.xml"/>
 
-    <property name="cli.bundle" value="${build}/duck.bundle"/>
+    <property name="cli.bundle" value="${build}/freeduck.bundle"/>
 
-    <property name="app.name" value="Cyberduck"/>
+    <property name="app.name" value="Freeduck"/>
     <property name="app.runtime.archs" value="'x86_64 arm64'"/>
     <property name="app.runtime.system.min" value="10.13"/>
     <property name="jvm.runtime.args"
@@ -71,8 +71,8 @@
         </antcall>
         <antcall target="tar">
             <param name="directory" value="${build}"/>
-            <param name="source" value="duck.bundle"/>
-            <param name="target" value="duck-${version}.${revision}.tar.gz"/>
+            <param name="source" value="freeduck.bundle"/>
+            <param name="target" value="freeduck-${version}.${revision}.tar.gz"/>
         </antcall>
         <foreach target="sha1" param="source">
             <fileset dir="${build.deploy}">

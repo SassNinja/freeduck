@@ -31,7 +31,7 @@ public class UserHomeSupportDirectoryFinder implements SupportDirectoryFinder {
 
     @Override
     public Local find() {
-        final Local folder = LocalFactory.get(LocalFactory.get(preferences.getProperty("local.user.home")), ".duck");
+        final Local folder = LocalFactory.get(LocalFactory.get(preferences.getProperty("local.user.home")), ".freeduck");
         log.debug("Use folder {} for application support directory", folder);
         return folder;
     }

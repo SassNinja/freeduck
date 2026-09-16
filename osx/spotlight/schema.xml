@@ -8,7 +8,7 @@
         <attribute name="ch_sudo_cyberduck_nickname" multivalued="false" type="CFString"/>
     </attributes>
     <types>
-        <type name="ch.sudo.cyberduck.bookmark">
+        <type name="io.freeduck.bookmark">
             <note>
 				The keys that this metadata importer handles.
             </note>

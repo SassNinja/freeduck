@@ -61,6 +61,11 @@ namespace Ch.Cyberduck.Core
             {
                 outfile.Write(report.ToString());
             }
+            string crashUrl = PreferencesFactory.get().getProperty("website.crash");
+            if (string.IsNullOrEmpty(crashUrl))
+            {
+                return;
+            }
             var result = TaskDialog.TaskDialog.Create()
                 .Title(LocaleFactory.localizedString("Do you want to report the last crash?", "Crash"))
                 .Instruction(LocaleFactory.localizedString("Do you want to report the last crash?", "Crash"))

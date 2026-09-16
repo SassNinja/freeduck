@@ -1,9 +1,9 @@
 ﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Package Name="Cyberduck"
+  <Package Name="Freeduck"
            Language="1033"
            Version="!(bind.FileVersion.product.exe)"
            Manufacturer="iterate GmbH"
-           UpgradeCode="B9C33495-4B77-4863-9A40-4E767388647E"
+           UpgradeCode="0A836749-3B12-46A0-9FF4-2910AE5A4699"
            InstallerVersion="200">
     <MajorUpgrade AllowDowngrades="yes" />
     <MediaTemplate EmbedCab="true" />
@@ -49,37 +49,37 @@
         <!-- Contains anything that references [#product.exe] -->
         <File Id="product.exe" Source="$(Cyberduck.TargetPath)" KeyPath="yes">
           <Shortcut Id="ApplicationStartMenuShortcut"
-                    Name="Cyberduck"
+                    Name="Freeduck"
                     Advertise="yes"
                     Description="Libre FTP, SFTP, WebDAV, SMB, S3 and OpenStack Swift browser"
                     Directory="ApplicationProgramsFolder"
                     WorkingDirectory="INSTALLFOLDER"
                     Icon="icon.ico">
-            <ShortcutProperty Key="System.AppUserModel.ID" Value="iterate.Cyberduck" />
+            <ShortcutProperty Key="System.AppUserModel.ID" Value="Freeduck.Freeduck" />
           </Shortcut>
         </File>
         <RemoveFolder Id="ApplicationProgramsFolder"
                       Directory="ApplicationProgramsFolder"
                       On="uninstall" />
 
-        <ProgId Id="Cyberduck.Bookmark"
-                Description="Cyberduck Bookmark"
+        <ProgId Id="Freeduck.Bookmark"
+                Description="Freeduck Bookmark"
                 Icon="cd_document.ico"
                 Advertise="yes">
           <Extension Id="duck">
             <Verb Id="open" Command="Open" Argument="&quot;%1&quot;" />
           </Extension>
         </ProgId>
-        <ProgId Id="Cyberduck Connection.Profile"
-                Description="Cyberduck Connection Profile"
+        <ProgId Id="Freeduck.Profile"
+                Description="Freeduck Connection Profile"
                 Icon="cd_document.ico"
                 Advertise="yes">
           <Extension Id="cyberduckprofile">
             <Verb Id="open" Command="Open" Argument="&quot;%1&quot;" />
           </Extension>
         </ProgId>
-        <ProgId Id="Cyberduck.License"
-                Description="Cyberduck License"
+        <ProgId Id="Freeduck.License"
+                Description="Freeduck License"
                 Icon="cd_document.ico"
                 Advertise="yes">
           <Extension Id="cyberducklicense">
@@ -88,7 +88,7 @@
         </ProgId>
 
         <!-- Capabilities keys for Vista/7 "Set Program Access and Defaults" -->
-        <RegistryKey Root="HKLM" Key="SOFTWARE\Cyberduck\Capabilities">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Freeduck\Capabilities">
           <RegistryValue Name="ApplicationDescription"
                          Value="Libre FTP, SFTP, WebDAV, SMB, S3 and OpenStack Swift browser for Mac and Windows."
                          Type="string" />
@@ -98,8 +98,8 @@
           <RegistryValue Key="shell\Open\command" Value="&quot;[#product.exe]&quot; &quot;%1&quot;" Type="string" />
         </RegistryKey>
         
-        <RegistryKey Root="HKLM" Key="SOFTWARE\Classes\Cyberduck.ProtocolHandler">
-          <RegistryValue Value="Cyberduck Protocol" Type="string" />
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Classes\Freeduck.ProtocolHandler">
+          <RegistryValue Value="Freeduck Protocol" Type="string" />
           <RegistryValue Key="DefaultIcon" Value="[#product.exe],0" Type="string" />
           <RegistryValue Key="shell\open\command"
                          Value="&quot;[#product.exe]&quot; &quot;%1&quot;"
@@ -108,15 +108,15 @@
       </Component>
 
       <Component Id="Registration">
-        <!-- App Paths to support Start,Run -> "Cyberduck" -->
+        <!-- App Paths to support Start,Run -> "Freeduck" -->
         <RegistryKey Root="HKLM"
-                     Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Cyberduck.exe">
-          <RegistryValue Value="Cyberduck.exe" Type="string" />
+                     Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Freeduck.exe">
+          <RegistryValue Value="Freeduck.exe" Type="string" />
           <RegistryValue Name="Path" Value="[INSTALLFOLDER]" Type="string" />
         </RegistryKey>
 
         <!-- Extend to the "open with" list + Win7 jump menu pinning -->
-        <RegistryKey Root="HKLM" Key="SOFTWARE\Classes\Applications\Cyberduck.exe">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Classes\Applications\Freeduck.exe">
           <RegistryKey Key="SupportedTypes">
             <RegistryValue Name=".duck" Value="" Type="string" />
             <RegistryValue Name=".cyberduckprofile" Value="" Type="string" />
@@ -131,41 +131,41 @@
         <RegistryValue Root="HKLM"
                        Key="SOFTWARE\RegisteredApplications"
                        Name="!(bind.property.ProductName)"
-                       Value="SOFTWARE\Cyberduck\Capabilities"
+                       Value="SOFTWARE\Freeduck\Capabilities"
                        Type="string" />
       </Component>
 
       <Component Id="Associations">
         <RegistryKey Root="HKLM" Key="SOFTWARE\Classes">
-          <RegistryValue Key="Cyberduck.Bookmark"
+          <RegistryValue Key="Freeduck.Bookmark"
                          Name="FriendlyTypeName"
-                         Value="Cyberduck Bookmark"
+                         Value="Freeduck Bookmark"
                          Type="string" />
-          <RegistryValue Key="Cyberduck Connection.Profile"
+          <RegistryValue Key="Freeduck.Profile"
                          Name="FriendlyTypeName"
-                         Value="Cyberduck Connection Profile"
+                         Value="Freeduck Connection Profile"
                          Type="string" />
-          <RegistryValue Key="Cyberduck.License"
+          <RegistryValue Key="Freeduck.License"
                          Name="FriendlyTypeName"
-                         Value="Cyberduck License"
+                         Value="Freeduck License"
                          Type="string" />
         </RegistryKey>
 
-        <RegistryKey Root="HKLM" Key="SOFTWARE\Cyberduck\Capabilities">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Freeduck\Capabilities">
           <RegistryKey Key="FileAssociations">
-            <RegistryValue Name=".duck" Value="Cyberduck.Bookmark" Type="string" />
-            <RegistryValue Name=".cyberduckprofile" Value="Cyberduck Connection.Profile" Type="string" />
-            <RegistryValue Name=".cyberducklicense" Value="Cyberduck.License" Type="string" />
+            <RegistryValue Name=".duck" Value="Freeduck.Bookmark" Type="string" />
+            <RegistryValue Name=".cyberduckprofile" Value="Freeduck.Profile" Type="string" />
+            <RegistryValue Name=".cyberducklicense" Value="Freeduck.License" Type="string" />
           </RegistryKey>
           <RegistryKey Key="URLAssociations">
-            <RegistryValue Name="ftp" Value="Cyberduck.ProtocolHandler" Type="string" />
-            <RegistryValue Name="ftps" Value="Cyberduck.ProtocolHandler" Type="string" />
-            <RegistryValue Name="dav" Value="Cyberduck.ProtocolHandler" Type="string" />
-            <RegistryValue Name="davs" Value="Cyberduck.ProtocolHandler" Type="string" />
-            <RegistryValue Name="sftp" Value="Cyberduck.ProtocolHandler" Type="string" />
-            <RegistryValue Name="smb" Value="Cyberduck.ProtocolHandler" Type="string" />
-            <RegistryValue Name="s3" Value="Cyberduck.ProtocolHandler" Type="string" />
-            <RegistryValue Name="irods" Value="Cyberduck.ProtocolHandler" Type="string" />
+            <RegistryValue Name="ftp" Value="Freeduck.ProtocolHandler" Type="string" />
+            <RegistryValue Name="ftps" Value="Freeduck.ProtocolHandler" Type="string" />
+            <RegistryValue Name="dav" Value="Freeduck.ProtocolHandler" Type="string" />
+            <RegistryValue Name="davs" Value="Freeduck.ProtocolHandler" Type="string" />
+            <RegistryValue Name="sftp" Value="Freeduck.ProtocolHandler" Type="string" />
+            <RegistryValue Name="smb" Value="Freeduck.ProtocolHandler" Type="string" />
+            <RegistryValue Name="s3" Value="Freeduck.ProtocolHandler" Type="string" />
+            <RegistryValue Name="irods" Value="Freeduck.ProtocolHandler" Type="string" />
           </RegistryKey>
         </RegistryKey>
       </Component>

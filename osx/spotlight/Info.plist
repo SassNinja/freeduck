@@ -11,7 +11,7 @@
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>ch.sudo.cyberduck.bookmark</string>
+				<string>io.freeduck.bookmark</string>
 			</array>
 		</dict>
 	</array>

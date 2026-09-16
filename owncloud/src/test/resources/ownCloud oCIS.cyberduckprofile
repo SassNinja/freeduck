@@ -50,7 +50,7 @@
         <key>OAuth Client Secret</key>
         <string>yoqICbLIeYbpZPqDH4D8k4NKb04HqnrWBntEeVZEQ5gO1RmaUlln0Aqu1dj2UoF4</string>
         <key>OAuth Redirect Url</key>
-        <string>x-cyberduck-action:oauth</string>
+        <string>x-freeduck-action:oauth</string>
         <key>Password Configurable</key>
         <false/>
         <key>Username Configurable</key>

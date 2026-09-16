@@ -159,9 +159,9 @@ public class ApplicationPreferences<T> : DefaultPreferences
 
         this.setDefault("editor.bundleIdentifier", "shell:openfilewith");
 
-        this.setDefault("update.feed.release", "https://version.cyberduck.io/windows/changelog.rss");
-        this.setDefault("update.feed.beta", "https://version.cyberduck.io/windows/beta/changelog.rss");
-        this.setDefault("update.feed.nightly", "https://version.cyberduck.io/windows/nightly/changelog.rss");
+        this.setDefault("update.feed.release", "");
+        this.setDefault("update.feed.beta", "");
+        this.setDefault("update.feed.nightly", "");
 
         // Importers
         this.setDefault("bookmark.import.winscp.location",

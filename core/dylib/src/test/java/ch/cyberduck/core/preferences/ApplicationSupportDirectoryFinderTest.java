@@ -28,6 +28,6 @@ public class ApplicationSupportDirectoryFinderTest {
     @Test
     public void testFind() {
         assertNotNull(new ApplicationSupportDirectoryFinder().find());
-        assertEquals("~/Library/Application Support/Cyberduck", new ApplicationSupportDirectoryFinder().find().getAbbreviatedPath());
+        assertEquals("~/Library/Application Support/Freeduck", new ApplicationSupportDirectoryFinder().find().getAbbreviatedPath());
     }
 }

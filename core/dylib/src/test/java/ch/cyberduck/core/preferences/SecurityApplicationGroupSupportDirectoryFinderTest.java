@@ -28,7 +28,7 @@ public class SecurityApplicationGroupSupportDirectoryFinderTest {
     @Test
     public void testFind() {
         assertNotNull(new SecurityApplicationGroupSupportDirectoryFinder().find());
-        assertEquals("~/Library/Group Containers/G69SCX94XU.duck/Library/Application Support/duck",
+        assertEquals("~/Library/Application Support/Freeduck",
                 new SecurityApplicationGroupSupportDirectoryFinder().find().getAbbreviatedPath());
     }
 }

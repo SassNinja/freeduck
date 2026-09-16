@@ -1,11 +1,11 @@
-Summary: Cyberduck CLI
-Name: duck
+Summary: Freeduck CLI
+Name: freeduck
 Version: ${VERSION}.${REVISION}
 Release: 1
 License: GPL
 Vendor: duck.sh
 Prefix: /opt
-Provides: duck
+Provides: freeduck
 Requires: glibc
 Autoprov: 0
 Autoreq: 0
@@ -23,7 +23,7 @@ Autoreq: 0
 %define __jar_repack %{nil}
 
 %description
-Cyberduck CLI
+Freeduck CLI
 
 %prep
 
@@ -33,8 +33,8 @@ Cyberduck CLI
 #
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}/opt/duck
-cp -r %{_sourcedir}/opt/duck/* %{buildroot}/opt/duck
+install -d -m 755 %{buildroot}/opt/freeduck
+cp -r %{_sourcedir}/opt/freeduck/* %{buildroot}/opt/freeduck
 install -d -m 755 "%{buildroot}%{dirname:%{license_install_file}}"
 install -m 644 "${LICENSEFILE}" "%{buildroot}%{license_install_file}"
 (cd %{buildroot} && find . -type d) | sed -e 's/^\.//' -e '/^$/d' | sort > %{app_filelist}
@@ -48,7 +48,7 @@ sed -i -e 's|"%{license_install_file}"||' -e '/^$/d' %{package_filelist}
 %license "%{license_install_file}"
 
 %post
-ln -sf /opt/duck/bin/duck /usr/local/bin/duck
+ln -sf /opt/freeduck/bin/freeduck /usr/local/bin/freeduck
 
 %clean
 rm -rf %{buildroot}

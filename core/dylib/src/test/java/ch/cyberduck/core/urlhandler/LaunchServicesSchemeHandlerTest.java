@@ -23,11 +23,11 @@ public class LaunchServicesSchemeHandlerTest {
         assertEquals(new Application("com.apple.finder"), l.getDefaultHandler(Scheme.ftp.name()));
         assertFalse(l.isDefaultHandler(Collections.singletonList(Scheme.ftp.name()), new Application("other.app", null)));
         l.setDefaultHandler(
-            new Application("ch.sudo.cyberduck", null), Collections.singletonList(Scheme.ftp.name())
+            new Application("io.freeduck", null), Collections.singletonList(Scheme.ftp.name())
         );
-        assertEquals("ch.sudo.cyberduck", l.getDefaultHandler(Scheme.ftp.name()).getIdentifier());
-        assertTrue(l.getAllHandlers(Scheme.ftp.name()).contains(new Application("ch.sudo.cyberduck")));
-        assertNotSame("ch.sudo.cyberduck", l.getDefaultHandler(Scheme.http.name()).getIdentifier());
-        assertTrue(l.isDefaultHandler(Collections.singletonList(Scheme.ftp.name()), new Application("ch.sudo.cyberduck", null)));
+        assertEquals("io.freeduck", l.getDefaultHandler(Scheme.ftp.name()).getIdentifier());
+        assertTrue(l.getAllHandlers(Scheme.ftp.name()).contains(new Application("io.freeduck")));
+        assertNotSame("io.freeduck", l.getDefaultHandler(Scheme.http.name()).getIdentifier());
+        assertTrue(l.isDefaultHandler(Collections.singletonList(Scheme.ftp.name()), new Application("io.freeduck", null)));
     }
 }

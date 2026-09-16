@@ -1,5 +1,5 @@
-class Duck < Formula
-  desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
+class Freeduck < Formula
+  desc "Command-line interface for Freeduck (a Cyberduck fork)"
   homepage "https://duck.sh/"
   url "${ARCHIVE}"
   sha256 "${ARCHIVE.SHA256}"
@@ -12,15 +12,15 @@ class Duck < Formula
     libexec.install Dir["*"]
     rm_r "#{libexec}/Contents/PlugIns/Runtime.jre"
     ln_s Formula["openjdk@21"].libexec/"openjdk.jdk", "#{libexec}/Contents/PlugIns/Runtime.jre"
-    bin.install_symlink "#{libexec}/Contents/MacOS/duck" => "duck"
+    bin.install_symlink "#{libexec}/Contents/MacOS/freeduck" => "freeduck"
   end
 
   test do
-    unless "Cyberduck ${VERSION} (${REVISION})\n".eql? %x(`#{bin}/duck -version`)
+    unless "Freeduck ${VERSION} (${REVISION})\n".eql? %x(`#{bin}/freeduck -version`)
       raise "Version mismatch"
     end
     filename = (testpath/"test")
-    system "#{bin}/duck", "--download", stable.url, filename
+    system "#{bin}/freeduck", "--download", stable.url, filename
     filename.verify_checksum stable.checksum
   end
 end

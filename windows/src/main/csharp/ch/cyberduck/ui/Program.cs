@@ -17,13 +17,13 @@ namespace Ch.Cyberduck.Ui
         private static void Main(string[] args)
         {
             bool newInstance;
-            Mutex mutex = new Mutex(true, "iterate/cyberduck.io", out newInstance);
+            Mutex mutex = new Mutex(true, "freeduck.io", out newInstance);
 
             StructureMapBootstrapper.Bootstrap();
             PreferencesFactory.set(ObjectFactory.GetInstance<Preferences>());
             var argsTask = Task.Run(async () =>
             {
-                using (var channel = new ChannelFactory<ICyberduck>(new NetNamedPipeBinding(), new EndpointAddress("net.pipe://localhost/iterate/cyberduck.io")))
+                using (var channel = new ChannelFactory<ICyberduck>(new NetNamedPipeBinding(), new EndpointAddress("net.pipe://localhost/freeduck.io")))
                 {
                     ICyberduck proxy = null;
 

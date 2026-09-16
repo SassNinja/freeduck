@@ -159,10 +159,10 @@ public class ProfileTest {
                 return "${notfound}";
             }
         };
-        assertEquals("io.cyberduck", profile.getProvider());
+        assertEquals("io.freeduck", profile.getProvider());
         assertEquals("${notfound}", profile.getOAuthClientSecret());
-        assertEquals("io.cyberduck", profile.getProperties().get("prop"));
+        assertEquals("io.freeduck", profile.getProperties().get("prop"));
         assertEquals("${unknown}", profile.getProperties().get("unknown"));
-        assertEquals("io.cyberduck", profile.getProperties().get("propFromMap"));
+        assertEquals("io.freeduck", profile.getProperties().get("propFromMap"));
     }
 }

@@ -65,7 +65,7 @@
                                     <goal>copy-dependencies</goal>
                                 </goals>
                                 <configuration>
-                                    <outputDirectory>${project.build.directory}/Cyberduck.app/Contents/Resources</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/Freeduck.app/Contents/Resources</outputDirectory>
                                     <includeTypes>jar</includeTypes>
                                     <includeScope>runtime</includeScope>
                                     <stripClassifier>true</stripClassifier>
@@ -78,7 +78,7 @@
                                     <goal>copy-dependencies</goal>
                                 </goals>
                                 <configuration>
-                                    <outputDirectory>${project.build.directory}/Cyberduck.app/Contents/Frameworks</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/Freeduck.app/Contents/Frameworks</outputDirectory>
                                     <includeTypes>dylib</includeTypes>
                                     <includeScope>runtime</includeScope>
                                     <stripClassifier>true</stripClassifier>
@@ -100,7 +100,7 @@
                                             <type>${project.packaging}</type>
                                         </artifactItem>
                                     </artifactItems>
-                                    <outputDirectory>${project.build.directory}/Cyberduck.app/Contents/Resources</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/Freeduck.app/Contents/Resources</outputDirectory>
                                 </configuration>
                             </execution>
                             <execution>
@@ -154,7 +154,7 @@
                                             <type>jar</type>
                                         </artifactItem>
                                     </artifactItems>
-                                    <outputDirectory>${project.build.directory}/Cyberduck.app/Contents/Resources
+                                    <outputDirectory>${project.build.directory}/Freeduck.app/Contents/Resources
                                     </outputDirectory>
                                     <includes>
                                         *.lproj/Browser.strings.1,*.lproj/Preferences.strings.1,*.lproj/Main.strings.1,*.lproj/Info.strings.1,*.lproj/Profiles.strings.1
@@ -177,7 +177,7 @@
                                             <version>${project.version}</version>
                                         </artifactItem>
                                     </artifactItems>
-                                    <outputDirectory>${project.build.directory}/Cyberduck.app/Contents/Resources/Profiles</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/Freeduck.app/Contents/Resources/Profiles</outputDirectory>
                                 </configuration>
                             </execution>
                         </executions>

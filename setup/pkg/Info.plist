@@ -5,13 +5,13 @@
 		<key>CFBundleDevelopmentRegion</key>
 		<string>en</string>
 		<key>CFBundleExecutable</key>
-		<string>duck</string>
+		<string>freeduck</string>
 		<key>CFBundleIdentifier</key>
-		<string>sh.duck</string>
+		<string>io.freeduck.cli</string>
 		<key>CFBundleInfoDictionaryVersion</key>
 		<string>6.0</string>
 		<key>CFBundleName</key>
-		<string>duck</string>
+		<string>freeduck</string>
 		<key>CFBundlePackageType</key>
 		<string>BNDL</string>
 		<key>CFBundleShortVersionString</key>
@@ -53,7 +53,7 @@
                 <key>UTTypeDescription</key>
                 <string>Cyberduck Bookmark</string>
                 <key>UTTypeIdentifier</key>
-                <string>ch.sudo.cyberduck.bookmark</string>
+                <string>io.freeduck.bookmark</string>
                 <key>UTTypeTagSpecification</key>
                 <dict>
                     <key>public.filename-extension</key>
@@ -72,7 +72,7 @@
                 <key>UTTypeDescription</key>
                 <string>Cyberduck Donation Key</string>
                 <key>UTTypeIdentifier</key>
-                <string>ch.sudo.cyberduck.license</string>
+                <string>io.freeduck.license</string>
                 <key>UTTypeTagSpecification</key>
                 <dict>
                     <key>public.filename-extension</key>
@@ -91,7 +91,7 @@
                 <key>UTTypeDescription</key>
                 <string>Cyberduck Connection Profile</string>
                 <key>UTTypeIdentifier</key>
-                <string>ch.sudo.cyberduck.profile</string>
+                <string>io.freeduck.profile</string>
                 <key>UTTypeTagSpecification</key>
                 <dict>
                     <key>public.filename-extension</key>
@@ -110,7 +110,7 @@
                 <key>UTTypeDescription</key>
                 <string>Cyberduck Transfer</string>
                 <key>UTTypeIdentifier</key>
-                <string>ch.sudo.cyberduck.transfer</string>
+                <string>io.freeduck.transfer</string>
                 <key>UTTypeTagSpecification</key>
                 <dict>
                     <key>public.filename-extension</key>
@@ -129,7 +129,7 @@
                 <key>UTTypeDescription</key>
                 <string>Cyberduck Segment</string>
                 <key>UTTypeIdentifier</key>
-                <string>ch.sudo.cyberduck.segment</string>
+                <string>io.freeduck.segment</string>
                 <key>UTTypeTagSpecification</key>
                 <dict>
                     <key>public.filename-extension</key>

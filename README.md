@@ -1,9 +1,9 @@
-# Cyberduck
+# Freeduck
 
 > [!NOTE]
 > This repository contains an unofficial modified version of Cyberduck where the license/donation enforcement mechanism has been removed. Automatic software updates are disabled so an upstream Cyberduck release cannot overwrite this fork.
 
-<img src="https://cdn.cyberduck.io/img/cyberduck-icon-rect-512.png" alt="Cyberduck Icon" width="400px"/>
+<img src="./cyberduck-application-rect.png" alt="Freeduck Icon" width="400px"/>
 
 ## Source
 
@@ -117,8 +117,8 @@ Replace `YourUsername` with your GitHub username and `YourPAT` with your persona
 
 Run `SKIP_SIGN=true mvn verify -DskipTests` to build without running any tests and skip code-signing. Find build artifacts in
 
-* `osx/target/Cyberduck.app`
-* `windows/target/Cyberduck.exe`
+* `osx/target/Freeduck.app`
+* `windows/target/Freeduck.exe`
 
 Run with `-Pinstaller` to build installer packages with build artifacts
 
@@ -222,9 +222,29 @@ Maven artifacts are available in a repository hosted on Amazon S3.
     </dependency>
     ```
 
-## Sponsors
+## Building Freeduck
 
-[![YourKit](https://www.yourkit.com/images/yk_logo.svg)](https://www.yourkit.com)
+This fork is meant to be built locally and installed next to official Cyberduck. There is no auto-update feed and no CI that publishes installers.
 
-YourKit supports open source projects with its full-featured Java Profiler. YourKit, LLC is the creator of [YourKit Java Profiler](https://www.yourkit.com/java/profiler/)
-and [YourKit .NET Profiler](https://www.yourkit.com/.net/profiler/), innovative and intelligent tools for profiling Java and .NET applications.
+Prerequisites are the same as in [Prerequisites](#prerequisites) above.
+
+Build an **unsigned** GUI app (skip tests and code signing):
+
+```sh
+SKIP_SIGN=true mvn verify -DskipTests
+```
+
+Outputs (host platform only):
+
+* macOS: `osx/target/Freeduck.app`
+* Windows: `windows/target/Freeduck.exe`
+
+Add `-Pinstaller` if you also want zip/pkg/msi/exe packages under `*/target/release/`.
+
+CLI binary name is `freeduck` (not `duck`):
+
+* `cli/osx/target/release/`
+* `cli/windows/target/release/`
+* `cli/linux/target/release/`
+
+The macOS app is unsigned, so Gatekeeper will warn on first launch. Open it from Finder, or right-click → Open. Data lives in `~/Library/Application Support/Freeduck` (macOS), `%APPDATA%\Freeduck` (Windows), or `~/.freeduck` (Linux CLI) — separate from an existing Cyberduck install.

@@ -40,7 +40,7 @@ namespace Ch.Cyberduck.Core.Urlhandler
         /// <param name="registry"></param>
         private void RegisterCyberduckUrlHandler(RegistryKey registry)
         {
-            CreateCustomUrlHandler(registry, "CyberduckURL", "Cyberduck URL", Application.ExecutablePath,
+            CreateCustomUrlHandler(registry, "FreeduckURL", "Freeduck URL", Application.ExecutablePath,
                 Application.ExecutablePath + ",0");
         }
 
@@ -62,7 +62,7 @@ namespace Ch.Cyberduck.Core.Urlhandler
             RegisterCyberduckUrlHandler(registry);
             RegistryKey r =
                 registry.CreateSubKey(@"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\ftp\UserChoice");
-            r.SetValue("Progid", "CyberduckURL");
+            r.SetValue("Progid", "FreeduckURL");
             r.Close();
         }
 
@@ -75,7 +75,7 @@ namespace Ch.Cyberduck.Core.Urlhandler
             RegistryKey ftpUserChoice =
                 Registry.CurrentUser.OpenSubKey(
                     @"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\ftp\UserChoice");
-            return (null != ftpUserChoice && "CyberduckURL".Equals(ftpUserChoice.GetValue("Progid")));
+            return (null != ftpUserChoice && "FreeduckURL".Equals(ftpUserChoice.GetValue("Progid")));
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Ch.Cyberduck.Core.Urlhandler
                 if (null != command)
                 {
                     var value = (string) command.GetValue(String.Empty);
-                    return (null != value && value.Contains("Cyberduck"));
+                    return (null != value && value.Contains("Freeduck"));
                 }
             }
             return false;

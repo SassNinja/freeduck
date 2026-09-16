@@ -24,7 +24,7 @@
     <import file="../build.xml"/>
     <import file="../archive.xml"/>
 
-    <property name="app.name" value="Cyberduck"/>
+    <property name="app.name" value="Freeduck"/>
 
     <property name="chocolatey.source" value="${setup}/chocolatey/cyberduck"/>
     <property name="chocolatey.target" value="${build.deploy}"/>
@@ -88,7 +88,7 @@
             <arg value="-o"/>
             <arg value="pipefail"/>
             <arg value="-c"/>
-            <arg value="openssl dgst -sha1 -binary '${build.deploy}/Cyberduck-Installer-${version}.${revision}.exe' | openssl dgst -sha1 -sign '${www.update}/private.pem' | openssl enc -base64"/>
+            <arg value="openssl dgst -sha1 -binary '${build.deploy}/Freeduck-Installer-${version}.${revision}.exe' | openssl dgst -sha1 -sign '${www.update}/private.pem' | openssl enc -base64"/>
         </exec>
         <echo message="DSASIGNATURE=${signature.dsa}"/>
 
@@ -108,8 +108,8 @@
             <include name="changelog.rss"/>
             <replacefilter token="${TIMESTAMP}" value="${touch.time}"/>
             <replacefilter token="${ARCHIVE}"
-                           value="https://update.cyberduck.io/${env.SPARKLE_FEED}/${app.name}-Installer-${normalized.version}.${revision}.exe"/>
-            <replacefilter token="${CHANGELOG}" value="https://version.cyberduck.io/windows/${env.SPARKLE_FEED}/changelog.html"/>
+                           value=""/>
+            <replacefilter token="${CHANGELOG}" value=""/>
             <replacefilter token="${REVISION}" value="${revision}"/>
             <replacefilter token="${VERSION}" value="${version}"/>
             <replacefilter token="${HASH}" value="${hash}"/>
@@ -124,7 +124,7 @@
                 <exclude name="*.exe"/>
             </fileset>
         </foreach>
-        <checksum file="${build.deploy}/Cyberduck-Installer-${version}.${revision}.exe"
+        <checksum file="${build.deploy}/Freeduck-Installer-${version}.${revision}.exe"
                   algorithm="sha-256" property="archive.sha256"/>
         <copy todir="${chocolatey.target}">
             <fileset dir="${chocolatey.source}">
@@ -137,7 +137,7 @@
             <replacefilter token="${VERSION}" value="${version}"/>
             <replacefilter token="${REVISION}" value="${revision}"/>
             <replacefilter token="${FEED}" value="${env.SPARKLE_FEED}"/>
-            <replacefilter token="${CHANGELOG}" value="https://version.cyberduck.io/windows/${env.SPARKLE_FEED}/changelog.html"/>
+            <replacefilter token="${CHANGELOG}" value=""/>
             <replacefilter token="${CHECKSUM}" value="${archive.sha256}"/>
             <replacefilter token="${COPYRIGHT}" value="${copyright}"/>
         </replace>
