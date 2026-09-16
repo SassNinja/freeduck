@@ -8,6 +8,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    if: github.repository == 'iterate-ch/cyberduck'
     uses: ./.github/workflows/deploy.yml
     with:
       MAVEN_PROFILES: 'appstore'
@@ -27,6 +28,7 @@ jobs:
 
   appstore:
     needs: deploy
+    if: github.repository == 'iterate-ch/cyberduck'
     permissions:
       actions: read
       contents: read

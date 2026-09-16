@@ -9,6 +9,7 @@ on:
 
 jobs:
   app:
+    if: github.repository == 'iterate-ch/cyberduck'
     permissions:
       actions: read
       contents: read
@@ -44,6 +45,7 @@ jobs:
           args: ${{ format('--verbose --existing overwrite --region {0}', inputs['SPARKLE_FEED'] == 'release' && 'DFW' || 'IAD') }}
 
   cli:
+    if: github.repository == 'iterate-ch/cyberduck'
     permissions:
       actions: read
       contents: read
@@ -70,6 +72,7 @@ jobs:
   changelog:
     # Publish the appcast only after the app archives it points at are live.
     needs: app
+    if: github.repository == 'iterate-ch/cyberduck'
     permissions:
       actions: read
       contents: read
@@ -115,6 +118,7 @@ jobs:
 
   deb:
     needs: cli
+    if: github.repository == 'iterate-ch/cyberduck'
     permissions:
       actions: read
       contents: read
@@ -167,6 +171,7 @@ jobs:
 
   rpm:
     needs: cli
+    if: github.repository == 'iterate-ch/cyberduck'
     permissions:
       actions: read
       contents: read

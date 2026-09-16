@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   transifex:
+    if: github.repository == 'iterate-ch/cyberduck'
     name: Pull localization changes
     runs-on: macos-latest
     defaults:
