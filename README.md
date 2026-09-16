@@ -1,18 +1,9 @@
 # Cyberduck
 
 > [!NOTE]
-> This repository contains an unofficial modified version of Cyberduck where the license/donation enforcement mechanism has been removed. It's intended to remain compatible with upstream Cyberduck.
+> This repository contains an unofficial modified version of Cyberduck where the license/donation enforcement mechanism has been removed. Automatic software updates are disabled so an upstream Cyberduck release cannot overwrite this fork.
 
 <img src="https://cdn.cyberduck.io/img/cyberduck-icon-rect-512.png" alt="Cyberduck Icon" width="400px"/>
-
-## Mailing Lists
-
-There is a [Google Groups Cyberduck](http://groups.google.com/group/cyberduck/) discussion mailing list.
-
-The following additional [mailing lists](http://lists.cyberduck.io/) are hosted:
-
-* [News](http://lists.cyberduck.io/mailman/listinfo/cyberduck-news) Announcements of new releases
-* [Localization](http://lists.cyberduck.io/mailman/listinfo/cyberduck-localization) Notifications about changes to the translations needed
 
 ## Source
 
@@ -35,12 +26,6 @@ For general help about using Cyberduck, please refer to the [documentation](http
 ## Additional Connection Profiles
 
 Additional connection profiles not bundled by default but available in _Preferences → Profiles_ are maintained in its own [repository](https://github.com/iterate-ch/profiles).
-
-## Snapshot and Beta builds
-
-These are nightly snapshot builds from the current development trunk featuring the latest bug fixes and enhancements. Be
-warned, though, these builds are potentially unstable and experimental. You can also switch to beta or snapshot builds
-in _Preferences → Update_.
 
 ## Prerequisites
 

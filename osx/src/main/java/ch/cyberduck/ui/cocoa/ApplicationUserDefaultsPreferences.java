@@ -23,7 +23,6 @@ import ch.cyberduck.core.cryptomator.DefaultVaultProvider;
 import ch.cyberduck.core.cryptomator.random.FastSecureRandomProvider;
 import ch.cyberduck.core.local.FinderLocal;
 import ch.cyberduck.core.preferences.ApplicationPreferences;
-import ch.cyberduck.core.sparkle.SparklePeriodicUpdateChecker;
 import ch.cyberduck.core.threading.DispatchThreadPool;
 import ch.cyberduck.ui.browser.BrowserColumn;
 import ch.cyberduck.ui.cocoa.callback.PromptAlertCallback;
@@ -90,7 +89,6 @@ public class ApplicationUserDefaultsPreferences extends ApplicationPreferences {
         super.setFactories();
 
         this.setDefault("factory.threadpool.class", DispatchThreadPool.class.getName());
-        this.setDefault("factory.updater.class", SparklePeriodicUpdateChecker.class.getName());
         this.setDefault("factory.dateformatter.class", UserDefaultsDateFormatter.class.getName());
         this.setDefault("factory.hostkeycallback.class", PromptHostKeyCallback.class.getName());
         this.setDefault("factory.logincallback.class", PromptLoginCallback.class.getName());
