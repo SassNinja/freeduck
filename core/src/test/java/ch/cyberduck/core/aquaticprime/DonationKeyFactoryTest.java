@@ -28,6 +28,7 @@ public class DonationKeyFactoryTest {
 
     @Test
     public void testCreate() {
-        assertEquals("Not a valid registration key", new DonationKeyFactory().create().getEntitlement());
+        assertEquals(String.format("Registered to %s", System.getProperty("user.name")),
+                new DonationKeyFactory().create().getEntitlement());
     }
 }

@@ -35,6 +35,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -118,7 +119,7 @@ public abstract class LicenseFactory extends Factory<License> {
     }
 
     /**
-     * @return If no license is installed a dummy license is returned.
+     * @return Installed license, or a registered license when none is present.
      * @see #EMPTY_LICENSE
      */
     public static License find() {
@@ -156,8 +157,7 @@ public abstract class LicenseFactory extends Factory<License> {
     private static final License EMPTY_LICENSE = new License() {
         @Override
         public boolean verify(final LicenseVerifierCallback callback) {
-            callback.failure(new InvalidLicenseException());
-            return false;
+            return true;
         }
 
         @Override
@@ -167,7 +167,8 @@ public abstract class LicenseFactory extends Factory<License> {
 
         @Override
         public String getEntitlement() {
-            return LocaleFactory.localizedString("Not a valid registration key", "License");
+            return MessageFormat.format(LocaleFactory.localizedString("Registered to {0}", "License"),
+                    System.getProperty("user.name"));
         }
 
         @Override
